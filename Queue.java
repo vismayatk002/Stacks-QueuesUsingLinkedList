@@ -26,36 +26,11 @@ public class Queue<T> implements QueueOperation<T>{
     }
 
     @Override
-    public T dequeue(){
-
-        if(isEmpty()){
-            System.out.println("Queue is empty!");
-            return null;
-        }
-        else{
-            Node<T> temp = head;
-            head = head.next;
-            size--;
-            return temp.data;
-        }
-    }
-
-    @Override
-    public T peek(){
-
-        return tail.data;
-    }
-
-    @Override
     public boolean isFull(){
 
        return size == maxSize;
     }
-
-    @Override
-    public boolean isEmpty(){
-        return size == 0;
-    }
+    
     private class Node<T>{
 
         T data;
