@@ -26,9 +26,35 @@ public class Stack<T> implements StackOperation<T>{
     }
 
     @Override
+    public T pop(){
+
+        if(isEmpty()){
+            System.out.println("Stack is empty!");
+            return null;
+        }
+        else{
+            Node<T> temp = head;
+            head = head.next;
+            size--;
+            return temp.data;
+        }
+    }
+
+    @Override
+    public T peek(){
+
+        return head.data;
+    }
+
+    @Override
     public boolean isFull(){
 
        return size == maxSize;
+    }
+
+    @Override
+    public boolean isEmpty(){
+        return size == 0;
     }
     private class Node<T>{
 
